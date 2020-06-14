@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inicio"
+            android:icon="@mipmap/home"
+            android:title="@string/menu_inicio" />
+        <item
+            android:id="@+id/nav_dadospessoais"
+            android:icon="@mipmap/dados_pessoais"
+            android:title="@string/menu_dadospessoais" />
+        <item
+            android:id="@+id/nav_listacriancas"
+            android:icon="@mipmap/lista_criancas"
+            android:title="@string/menu_listacriancas" />
+        <item
+            android:id="@+id/nav_medregisto"
+            android:icon="@mipmap/add_reg_med"
+            android:title="@string/menu_medregisto" />
+        <item
+            android:id="@+id/nav_sobre"
+            android:icon="@mipmap/sobre"
+            android:title="@string/menu_sobre" />
+        <item
+            android:id="@+id/nav_ajuda"
+            android:icon="@mipmap/ajuda"
+            android:title="@string/menu_ajuda" />
+    </group>
+</menu>

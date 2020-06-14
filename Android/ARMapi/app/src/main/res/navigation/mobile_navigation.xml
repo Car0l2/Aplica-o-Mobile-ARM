@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_inicio">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="pt.ismt.arm.ui.inicio.InicioFragment"
+        android:label="@string/menu_inicio"
+        tools:layout="@layout/fragment_inicio">
+
+        <action
+            android:id="@+id/action_InicioFragment_to_InicioSecondFragment"
+            app:destination="@id/nav_inicio_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_inicio_second"
+        android:name="pt.ismt.arm.ui.inicio.InicioFragment"
+        android:label="@string/menu_inicio"
+        tools:layout="@layout/fragment_inicio">
+        <action
+            android:id="@+id/action_InicioSecondFragment_to_InicioFragment"
+            app:destination="@id/nav_inicio" />
+
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_dadospessoais"
+        android:name="pt.ismt.arm.ui.dadospessoais.DadosPessoaisFragment"
+        android:label="@string/menu_dadospessoais"
+        tools:layout="@layout/fragment_listacriancas" />
+
+    <fragment
+        android:id="@+id/nav_listacriancas"
+        android:name="pt.ismt.arm.ui.listacriancas.ListaCriancasFragment"
+        android:label="@string/menu_listacriancas"
+        tools:layout="@layout/fragment_sobre" />
+    <fragment
+        android:id="@+id/nav_medregisto"
+        android:name="pt.ismt.arm.ui.medregisto.MedRegistoFragment"
+        android:label="@string/menu_medregisto" />
+    <fragment
+        android:id="@+id/nav_sobre"
+        android:name="pt.ismt.arm.ui.sobre.SobreFragment"
+        android:label="@string/menu_sobre" />
+    <fragment
+        android:id="@+id/nav_ajuda"
+        android:name="pt.ismt.arm.ui.ajuda.AjudaFragment"
+        android:label="@string/menu_ajuda" />
+</navigation>

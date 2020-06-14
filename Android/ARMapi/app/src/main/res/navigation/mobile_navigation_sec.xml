@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation_sec"
+    app:startDestination="@+id/nav_inicio">
+
+    <fragment
+        android:id="@+id/nav_inicio"
+        android:name="pt.ismt.arm.ui.inicio_sec.InicioSecFragment"
+        android:label="@string/menu_inicio">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/nav_inicio_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_inicio_second"
+        android:name="pt.ismt.arm.ui.home.HomeSecondFragment"
+        android:label="@string/menu_inicio"
+        tools:layout="@layout/fragment_home_second">
+        <action
+            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
+            app:destination="@id/nav_inicio" />
+
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_listafuncionarios"
+        android:name="pt.ismt.arm.ui.seclistafuncionarios.SecListaFuncionariosFragment"
+        android:label="@string/menu_listafuncionarios"
+        tools:layout="@layout/fragment_sec_add_criancas" />
+
+    <fragment
+        android:id="@+id/nav_lista_criancas"
+        android:name="pt.ismt.arm.ui.seclistacriancas.SecListaCriancasFragment"
+        android:label="@string/menu_listacriancas"
+        tools:layout="@layout/fragment_sec_ajuda" />
+    <fragment
+        android:id="@+id/nav_addfun"
+        android:name="pt.ismt.arm.ui.secaddfuncionario.SecAddFuncionarioFragment"
+        android:label="@string/menu_addfun" />
+    <fragment
+        android:id="@+id/nav_addcri"
+        android:name="pt.ismt.arm.ui.secaddcriancas.SecaddCriancasFragment"
+        android:label="@string/menu_addcri" />
+    <fragment
+        android:id="@+id/nav_sobre"
+        android:name="pt.ismt.arm.ui.sobre.SobreFragment"
+        android:label="@string/menu_sobre" />
+    <fragment
+        android:id="@+id/nav_ajuda"
+        android:name="pt.ismt.arm.ui.secajuda.SecAjudaFragment"
+        android:label="@string/menu_ajuda" />
+</navigation>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <TextView
+        android:id="@+id/lbl_add_fun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="71dp"
+        android:text="@string/menu_addfun"
+        android:textColor="@color/azul_40"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="@color/azul_100"
+        android:text="Inserir"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.819"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pass" />
+
+    <EditText
+        android:id="@+id/txt_email"
+        android:layout_width="293dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:hint="Insira o email"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_email" />
+
+    <EditText
+        android:id="@+id/txt_pass"
+        android:layout_width="293dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:hint="Insira a password"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_pass" />
+
+    <TextView
+        android:id="@+id/lbl_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/lbl_email"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_telemovel" />
+
+    <TextView
+        android:id="@+id/lbl_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/lbl_password"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_email" />
+
+    <EditText
+        android:id="@+id/txt_telemovel"
+        android:layout_width="298dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:hint="Insira o número de telemóvel"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_telemovel" />
+
+    <TextView
+        android:id="@+id/lbl_telemovel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/lbl_telemovel"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_sala" />
+
+    <EditText
+        android:id="@+id/txt_sala"
+        android:layout_width="293dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:hint="ex. Amarela, Azul..."
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_sala" />
+
+    <TextView
+        android:id="@+id/lbl_sala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/lbl_sala"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_funcao" />
+
+    <EditText
+        android:id="@+id/txt_funcao"
+        android:layout_width="293dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:hint="ex. Educador(a), Auxiliar..."
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_funcao" />
+
+    <TextView
+        android:id="@+id/lbl_nome_f"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Nome do Funcionário"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.244"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_add_fun" />
+
+    <EditText
+        android:id="@+id/txt_nome_f"
+        android:layout_width="293dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background"
+        android:ems="10"
+        android:hint="Insira o nome do funcionário"
+        android:inputType="textPersonName"
+        android:shadowColor="@color/azul_40"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_nome_f" />
+
+    <TextView
+        android:id="@+id/lbl_funcao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Função"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nome_f" />
+</androidx.constraintlayout.widget.ConstraintLayout>

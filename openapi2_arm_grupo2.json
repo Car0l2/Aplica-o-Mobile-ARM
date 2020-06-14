@@ -1,0 +1,734 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API ARM",
+    "description": "Especificação da API da app ARM realizada no âmbito do projecto final d UC Programação III do curso de Multimédia do ISMT, realizada por Adriana Mateus, Carolina Abade e Carolina Saraiva.",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001/api/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "colaborador",
+      "description": "Todos os dados (nome, sala, etc.) do colaborador."
+    },
+    {
+      "name": "crianca",
+      "description": "Todos os dados (nome, idade, etc.) das crianças."
+    },
+    {
+      "name": "registo",
+      "description": "Todos os registos (nome, validade, etc.) das crianças."
+    }
+  ],
+  "paths": {
+    "/colaboradores": {
+      "get": {
+        "tags": [
+          "colaborador"
+        ],
+        "summary": "Retorna os dados de todos os colaboradores.",
+        "operationId": "colab_list",
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListaColaboradores"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/colaborador": {
+      "get": {
+        "tags": [
+          "colaborador"
+        ],
+        "summary": "Retorna os dados do colabordor de acordo com o ID recebido.",
+        "operationId": "colab_detail",
+        "parameters": [
+          {
+            "name": "id_colaborador",
+            "in": "path",
+            "description": "ID do colaborador.",
+            "required": true,
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Colaborador"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido. O ID do colaborador não é válido.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "colaborador"
+        ],
+        "summary": "Atualiza um colaborador existente de acordo com os dados recebidos.",
+        "operationId": "colab_update",
+        "requestBody": {
+          "description": "Os dados do colaborador a atualizar.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Colaborador"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Colaborador"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido. Os dados do colaborador não são válidos.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "colaborador"
+      },
+      "post": {
+        "tags": [
+          "colaborador"
+        ],
+        "summary": "Cria um novo colaborador de acordo com os dados recebidos.",
+        "operationId": "colab_create",
+        "requestBody": {
+          "description": "Os dados do colaborador a adicionar.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Colaborador"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Colaborador"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido. Os dados do colaborador não são válidos.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "colaborador"
+      },
+      "delete": {
+        "tags": [
+          "colaborador"
+        ],
+        "summary": "Apaga o colaborador de acordo com o ID.",
+        "operationId": "colab_delete",
+        "parameters": [
+          {
+            "name": "id_colaborador",
+            "in": "path",
+            "description": "ID do colaborador.",
+            "required": true,
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Operação realizada com sucesso.",
+            "content": {}
+          },
+          "400": {
+            "description": "Erro na execução do pedido. O ID do colaborador não é válido.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/criancas": {
+      "get": {
+        "tags": [
+          "crianca"
+        ],
+        "summary": "Retorna os dados de todos as crianças.",
+        "operationId": "crianca_list",
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListaCriancas"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/crianca": {
+      "get": {
+        "tags": [
+          "crianca"
+        ],
+        "summary": "Retorna os dados da criança de acordo com o ID recebido.",
+        "operationId": "crianca_detail",
+        "parameters": [
+          {
+            "name": "id_crianca",
+            "in": "path",
+            "description": "ID da criança.",
+            "required": true,
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Crianca"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido. O ID do colaborador não é válido.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "crianca"
+        ],
+        "summary": "Atualiza uma criança existente de acordo com os dados recebidos.",
+        "operationId": "crianca_update",
+        "requestBody": {
+          "description": "Os dados da crianca a atualizar.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Crianca"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Crianca"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido. Os dados da criança não são válidos.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "crianca"
+      },
+      "post": {
+        "tags": [
+          "crianca"
+        ],
+        "summary": "Cria uma nova criança de acordo com os dados recebidos.",
+        "operationId": "crianca_create",
+        "requestBody": {
+          "description": "Os dados da criança a adicionar.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Crianca"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Crianca"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido. Os dados da criança não são válidos.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "crianca"
+      },
+      "delete": {
+        "tags": [
+          "crianca"
+        ],
+        "summary": "Apaga a crianca de acordo com o ID.",
+        "operationId": "crianca_delete",
+        "parameters": [
+          {
+            "name": "id_crianca",
+            "in": "path",
+            "description": "ID da criança.",
+            "required": true,
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Operação realizada com sucesso.",
+            "content": {}
+          },
+          "400": {
+            "description": "Erro na execução do pedido. O ID da criança não é válido.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/registos": {
+      "get": {
+        "tags": [
+          "registo"
+        ],
+        "summary": "Retorna os registo de medicação de todas as crianças.",
+        "operationId": "registo_list",
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListaRegistos"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/registo": {
+      "get": {
+        "tags": [
+          "registo"
+        ],
+        "summary": "Retorna os dados do registo de medicação de acordo com o ID recebido.",
+        "operationId": "registo_detail",
+        "parameters": [
+          {
+            "name": "id_registo",
+            "in": "path",
+            "description": "ID do registo.",
+            "required": true,
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido. O ID do registo de medicação não é válido.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "registo"
+        ],
+        "summary": "Atualiza um registo de medicação existente de acordo com os dados recebidos.",
+        "operationId": "registo_update",
+        "requestBody": {
+          "description": "Os dados do registo de medicação a atualizar.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Registo"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido. Os dados do registo de medicação não são válidos.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "registo"
+      },
+      "post": {
+        "tags": [
+          "registo"
+        ],
+        "summary": "Cria um novo registo de medicação de acordo com os dados recebidos.",
+        "operationId": "registo_create",
+        "requestBody": {
+          "description": "Os dados do registo de medicação a adicionar.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Registo"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "201": {
+            "description": "Operação realizada com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registo"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro na execução do pedido. Os dados do registo de medicação não são válidos.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "registo"
+      },
+      "delete": {
+        "tags": [
+          "registo"
+        ],
+        "summary": "Apaga o registo de medicação de acordo com o ID.",
+        "operationId": "registo_delete",
+        "parameters": [
+          {
+            "name": "id_registo",
+            "in": "path",
+            "description": "ID do registo de medicação.",
+            "required": true,
+            "schema": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Operação realizada com sucesso.",
+            "content": {}
+          },
+          "400": {
+            "description": "Erro na execução do pedido. O ID do registo de medicação não é válido.",
+            "content": {}
+          },
+          "404": {
+            "description": "Erro na execução do pedido.",
+            "content": {}
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ListaColaboradores": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Colaborador"
+        }
+      },
+      "Colaborador": {
+        "required": [
+          "id_colaborador",
+          "nome_colaborador"
+        ],
+        "type": "object",
+        "properties": {
+          "id_colaborador": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nome_colaborador": {
+            "type": "string",
+            "format": "string"
+          },
+          "sala": {
+            "type": "string",
+            "format": "string"
+          },
+          "funcao": {
+            "type": "string",
+            "format": "string"
+          },
+          "telemovel": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "email": {
+            "type": "string",
+            "format": "string"
+          },
+          "pass_enc": {
+            "type": "string",
+            "format": "string"
+          }
+        }
+      },
+      "ListaCriancas": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Crianca"
+        }
+      },
+      "Crianca": {
+        "required": [
+          "id_crianca",
+          "nome_crianca"
+        ],
+        "type": "object",
+        "properties": {
+          "id_crianca": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nome_crianca": {
+            "type": "string",
+            "format": "string"
+          },
+          "idade": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sala": {
+            "type": "string",
+            "format": "string"
+          },
+          "alergias": {
+            "type": "string",
+            "format": "string"
+          },
+          "restricao": {
+            "type": "string",
+            "format": "string"
+          },
+          "doenca_cronica": {
+            "type": "string",
+            "format": "string"
+          },
+          "contacto": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "data": {
+            "type": "string",
+            "format": "date"
+          },
+          "registos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Registo"
+            }
+          }
+        }
+      },
+      "ListaRegistos": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Registo"
+        }
+      },
+      "Registo": {
+        "required": [
+          "id_registo",
+          "id_crianca",
+          "id_colaborador"
+        ],
+        "type": "object",
+        "properties": {
+          "registo": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "crianca": {
+            "$ref": "#/components/schemas/Crianca"
+          },
+          "nome_med": {
+            "type": "string",
+            "format": "string"
+          },
+          "val_med": {
+            "type": "string",
+            "format": "date"
+          },
+          "ref_med": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "dose": {
+            "type": "string",
+            "format": "string"
+          },
+          "observacao": {
+            "type": "string",
+            "format": "string"
+          },
+          "colaborador": {
+            "$ref": "#/components/schemas/Colaborador"
+          },
+          "data_registo": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    }
+  }
+}
