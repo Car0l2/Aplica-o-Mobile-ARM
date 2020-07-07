@@ -30,6 +30,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ListView
+                android:id="@+id/listdados"
+                android:layout_width="321dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="45dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_dadoscri" />
+
             <Button
                 android:id="@+id/button14"
                 android:layout_width="wrap_content"
@@ -46,67 +58,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/listfunadd" />
 
-            <TextView
-                android:id="@+id/lbl_mail3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="263dp"
-                android:text="Contacto"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_mail2" />
-
-            <TextView
-                android:id="@+id/txt_nome8"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginTop="8dp"
-                android:text="1"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.276"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_nomec4" />
-
-            <TextView
-                android:id="@+id/lbl_nomec4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Idade"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.152"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_nome6" />
-
-            <TextView
-                android:id="@+id/txt_sala"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginTop="8dp"
-                android:text="Laranja"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.276"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_sala" />
-
             <Button
                 android:id="@+id/listfunadd"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_marginStart="238dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="34dp"
                 android:background="@android:drawable/editbox_background"
                 android:backgroundTint="@color/azul_100"
@@ -115,148 +72,8 @@
                 android:textColor="@color/cardview_light_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_mail3" />
+                app:layout_constraintTop_toBottomOf="@+id/listdados" />
 
-            <TextView
-                android:id="@+id/lbl_mail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="146dp"
-                android:text="Restrições Alimentares"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_sala2" />
-
-            <TextView
-                android:id="@+id/txt_nome6"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/txt_nome_exemplo"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.276"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_nomec3" />
-
-            <TextView
-                android:id="@+id/lbl_sala"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/lbl_sala"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.148"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_nome8" />
-
-            <TextView
-                android:id="@+id/txt_sala2"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="53dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="139dp"
-                android:text="Chocolate"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_tel" />
-
-            <TextView
-                android:id="@+id/lbl_mail2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="267dp"
-                android:text="Doenças"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_mail" />
-
-            <TextView
-                android:id="@+id/txt_mail2"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="137dp"
-                android:text="Nenhuma"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_mail2" />
-
-            <TextView
-                android:id="@+id/lbl_nomec3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/lbl_nome"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.154"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_dadoscri" />
-
-            <TextView
-                android:id="@+id/lbl_tel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Alergias"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.163"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_sala" />
-
-            <TextView
-                android:id="@+id/txt_mail"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="137dp"
-                android:text="Chocolate"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_mail" />
-
-            <TextView
-                android:id="@+id/txt_mail3"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="137dp"
-                android:text="915 687 133"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_mail3" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

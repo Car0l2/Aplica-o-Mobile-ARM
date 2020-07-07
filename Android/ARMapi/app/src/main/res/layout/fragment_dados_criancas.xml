@@ -8,69 +8,253 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
         android:fillViewport="true"
-        tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="213dp">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="174dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/lbl_mail3"
-                android:layout_width="wrap_content"
+            <HorizontalScrollView
+                android:layout_width="364dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="263dp"
-                android:text="Contacto"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_mail2" />
+                app:layout_constraintTop_toBottomOf="@+id/addregmed">
 
-            <TextView
-                android:id="@+id/txt_nome8"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginTop="8dp"
-                android:text="1"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.276"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_nomec4" />
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:stretchColumns="6">
 
-            <TextView
-                android:id="@+id/lbl_nomec4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Idade"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.152"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_nome6" />
 
-            <TextView
-                android:id="@+id/txt_sala"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginTop="8dp"
-                android:text="Laranja"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.276"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_sala" />
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        android:layout_marginTop="15dp"
+                        android:backgroundTint="@color/azul_100">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:gravity="center"
+                            android:text="  Medicamento  "
+                            android:textColor="#000"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:gravity="center"
+                            android:text="  Validade  "
+                            android:textColor="#000"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:gravity="center"
+                            android:text="  Referência  "
+                            android:textColor="#000"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:gravity="center"
+                            android:text="  Dose  "
+                            android:textColor="#000"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:gravity="center"
+                            android:text="  Administrado por:  "
+                            android:textColor="#000"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:gravity="center"
+                            android:text="  Data e Hora  "
+                            android:textColor="#000"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:background="@color/azul_40">
+
+                        <TextView
+                            android:id="@+id/txtMed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text="Brufen"
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/txtValidade"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text="07/20"
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/txtReferencia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text="87436f83"
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/txtDose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text=" 200 mg "
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/txtAdmni"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text="Maria"
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/txtDataHora"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text=" 13/02/20 - 16:55 h "
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:background="@color/azul_40">
+
+                        <TextView
+                            android:id="@+id/txtMed2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text="Bennuron"
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/txtValidade2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text="06/21"
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/txtReferencia2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text=" 2541cs63d4 "
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/txtDose2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text=" 500 mg "
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/txtAdmni2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text="Ana"
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/txtDataHora2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:background="?android:attr/colorBackground"
+                            android:gravity="center"
+                            android:text=" 10/01/20 - 09:55 h "
+                            android:textColor="#000"
+                            android:textSize="15dp" />
+                    </TableRow>
+                </TableLayout>
+            </HorizontalScrollView>
 
             <Button
                 android:id="@+id/addregmed"
@@ -89,152 +273,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <TextView
-                android:id="@+id/lbl_mail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="146dp"
-                android:text="Restrições Alimentares"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_sala2" />
-
-            <TextView
-                android:id="@+id/txt_nome6"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/txt_nome_exemplo"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.276"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_nomec3" />
-
-            <TextView
-                android:id="@+id/lbl_sala"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/lbl_sala"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.148"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_nome8" />
-
-            <TextView
-                android:id="@+id/txt_sala2"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="53dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="139dp"
-                android:text="Chocolate"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_tel" />
-
-            <TextView
-                android:id="@+id/lbl_mail2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="267dp"
-                android:text="Doenças"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_mail" />
-
-            <TextView
-                android:id="@+id/txt_mail2"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="137dp"
-                android:text="Nenhuma"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_mail2" />
-
-            <TextView
-                android:id="@+id/lbl_nomec3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/lbl_nome"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.154"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_dados_cri" />
-
-            <TextView
-                android:id="@+id/lbl_tel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="Alergias"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.163"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_sala" />
-
-            <TextView
-                android:id="@+id/txt_mail"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="137dp"
-                android:text="Chocolate"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_mail" />
-
-            <TextView
-                android:id="@+id/txt_mail3"
-                android:layout_width="201dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="55dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="137dp"
-                android:text="915 687 133"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_mail3" />
-
-            <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="130dp"
                 android:text="Registos de Medicação"
                 android:textColor="@color/azul_40"
@@ -242,7 +285,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_mail3" />
+                app:layout_constraintTop_toBottomOf="@+id/listdados" />
 
             <TextView
                 android:id="@+id/lbl_dados_cri"
@@ -259,15 +302,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="400dp"
-                android:layout_height="177dp"
-                android:layout_marginTop="16dp"
-                android:src="@mipmap/tblregmed"
+            <ListView
+                android:id="@+id/listdados"
+                android:layout_width="321dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addregmed" />
+                app:layout_constraintTop_toBottomOf="@+id/lbl_dados_cri" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

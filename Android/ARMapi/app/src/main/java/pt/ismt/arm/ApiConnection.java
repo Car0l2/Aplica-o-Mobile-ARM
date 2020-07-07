@@ -23,7 +23,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import pt.ismt.arm.ui.dadoscriancas.DadosCriancasFragment;
 import pt.ismt.arm.ui.listacriancas.ListaCriancasFragment;
+import pt.ismt.arm.ui.secactcrianca.SecActCriancaFragment;
+import pt.ismt.arm.ui.secdadoscriancas.SecDadosCriancasFragment;
+import pt.ismt.arm.ui.seclistacriancas.SecListaCriancasFragment;
 
 public class ApiConnection extends AsyncTask<String, Void, Void> {
 
@@ -35,10 +39,10 @@ public class ApiConnection extends AsyncTask<String, Void, Void> {
     protected void onPreExecute(){
         super.onPreExecute();
 
-        //_pdialog = new ProgressDialog(_activity);
+       /* _pdialog = new ProgressDialog(_activity);
         _pdialog.setMessage("Aguardar os dados...");
         _pdialog.setCancelable(false);
-        _pdialog.show();
+        _pdialog.show();*/
     }
 
     @Override
@@ -47,7 +51,7 @@ public class ApiConnection extends AsyncTask<String, Void, Void> {
         InputStream _is;
         String _resJson;
 
-        _pdialog .setMessage("Pedido a ser executado...");
+       // _pdialog .setMessage("Pedido a ser executado...");
 
         try{
             //liga o endpoint
@@ -59,7 +63,8 @@ public class ApiConnection extends AsyncTask<String, Void, Void> {
 
             if (urls[1] == "0") { //GET
                 _conexao.setRequestMethod("GET");
-            } else if (urls[1] == "1") { //POST
+            }
+            else if (urls[1] == "1") { //POST
                 String data = urls[2];
                 Log.d("http", "Os dados enviados no body do pedido foram: " + data);
 
@@ -73,8 +78,35 @@ public class ApiConnection extends AsyncTask<String, Void, Void> {
                 try (DataOutputStream wr = new DataOutputStream(_conexao.getOutputStream())) {
                     wr.write(dados);
                 }
-            }
+            }else if (urls[1] == "2") { //PUT
+                    String data = urls[2];
+                    Log.d("http", "Os dados enviados no body do pedido foram: " + data);
 
+                    byte[] dados = data.getBytes(StandardCharsets.UTF_8);
+
+                    _conexao.setDoOutput(true);
+                    _conexao.setRequestMethod("PUT");
+                    _conexao.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                    _conexao.setRequestProperty("charset", "utf-8");
+                    _conexao.setRequestProperty("Content-Length", Integer.toString(dados.length));
+                    try (DataOutputStream wr = new DataOutputStream(_conexao.getOutputStream())) {
+                        wr.write(dados);
+                    }
+            }else if (urls[1] == "3") { //DELETE
+                String data = urls[2];
+                Log.d("http", "Os dados eliminados no body do pedido foram: " + data);
+
+                byte[] dados = data.getBytes(StandardCharsets.UTF_8);
+
+                _conexao.setDoOutput(true);
+                _conexao.setRequestMethod("DELETE");
+                _conexao.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                _conexao.setRequestProperty("charset", "utf-8");
+                _conexao.setRequestProperty("Content-Length", Integer.toString(dados.length));
+                try (DataOutputStream wr = new DataOutputStream(_conexao.getOutputStream())) {
+                    wr.write(dados);
+                }
+            }
             _conexao.setReadTimeout(12000);
             _conexao.setConnectTimeout(12000);
             _conexao.connect();
@@ -193,9 +225,22 @@ public class ApiConnection extends AsyncTask<String, Void, Void> {
     protected void onPostExecute(Void _resultado){
         super.onPostExecute(_resultado);
 
-        if (_pdialog.isShowing()) {
-            _pdialog.dismiss();
+//        if (_pdialog.isShowing()) {
+      //      _pdialog.dismiss();
+    //    }
+        if (_activity.getClass().getSimpleName().equals("ListaCriancasFragment")) {
+            ListaCriancasFragment lcf = (ListaCriancasFragment) _activity;
+            lcf.updateUI();
         }
-
+       else if (_activity.getClass().getSimpleName().equals("DadosCriancasFragment")) {
+            DadosCriancasFragment lcf = (DadosCriancasFragment) _activity;
+            lcf.updateUI();
+        }else if (_activity.getClass().getSimpleName().equals("SecListaCriancasFragment")) {
+            SecListaCriancasFragment lcf = (SecListaCriancasFragment) _activity;
+            lcf.updateUI();
+        }else if (_activity.getClass().getSimpleName().equals("SecDadosCriancasFragment")) {
+            SecDadosCriancasFragment lcf = (SecDadosCriancasFragment) _activity;
+            lcf.updateUI();
+       }
     }
 }

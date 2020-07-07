@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
@@ -33,6 +34,7 @@ public class ListaCriancasFragment extends Fragment {
     ListView lv ;
     ApiConnection _api;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -42,6 +44,11 @@ public class ListaCriancasFragment extends Fragment {
 
           //  _lv = _lv.findViewById(R.id.listcri);
           lv = root.findViewById(R.id.listcri);
+
+        _api= new ApiConnection();
+        _api._activity = ListaCriancasFragment.this;
+        _api._listaCriancas =new ArrayList();
+        _api.execute("http://10.0.2.2:3001/api/v1/criancas","0");
 
 
 
@@ -73,12 +80,9 @@ public class ListaCriancasFragment extends Fragment {
 
     }
 
-    public void pedidoApiDeTodasCrianças(View v) {
+    public void pedidoDosDadosDaCrianca(View v) {
         //iniciar o meu pedido à API
-        _api= new ApiConnection();
-        _api._activity = ListaCriancasFragment.this;
-        _api._listaCriancas =new ArrayList();
-        _api.execute("http://10.0.2.2:3001/api/v1/crianca/1","0");
+
     }
 
 
@@ -86,22 +90,50 @@ public class ListaCriancasFragment extends Fragment {
         //lista onde irá ficar armazenado a string para mostrar na lista (listView)
         final ArrayList<String> dadosLista = new ArrayList<>();
 
+
+
         //ciclo que percorre todos as crianças retornados pela API
         for (int i=0; i<_api._listaCriancas.size(); i++) {
             //variável que guarda os dados da criança (no formato key-value-pair)
             HashMap<String, String> crianca = _api._listaCriancas.get(i);
+            lv.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                    DadosCriancasFragment dadosCriancasFragment = new DadosCriancasFragment();
+                    FragmentManager manager = getFragmentManager();
+                    manager.beginTransaction().replace(R.id.nav_host_fragment, dadosCriancasFragment, dadosCriancasFragment.getTag()).commit();
+
+
+                }
+            });
 
             //string com os dados a mostrar na lista no formato - nome
             String nome_crianca = crianca.get("nome_crianca");
             dadosLista.add(nome_crianca);
+
         }
        /* ListAdapter adapter = new SimpleAdapter(requireContext(), dadosLista, R.layout.fragment_listacriancas,
                 new String[]{"id_cliente", "nome", "nome_perfil", "morada", "contribuinte", "contacto"},
                 new int[]{R.id.listcri, R.id.listcri});
         lv.setAdapter(adapter);
-     */   lv.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, dadosLista));
+     */   lv.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_expandable_list_item_1, dadosLista));
+
+        /*public void run() {
+            recyclerViewCursos.setLayoutManager(new LinearLayoutManager(getContext()));
+            PlanosCursoAdapter planosCursoAdapter = new PlanosCursoAdapter (getContext(), getTargetFragment());
+            recyclerViewCursos.setAdapter(planosCursoAdapter);
+            planosCursoAdapter.refreshList(planosList);
+
+        }*/
+        //string com os dados a mostrar na lista no formato - nome(id) e por baixo o email
+       /* String nome_e_id = aluno.get("nome")+" ("+aluno.get("id")+") \n"+aluno.get("email");
+        dadosLista.add(nome_e_id);
+    }
+        _lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, dadosLista));
 
        /* ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, dadosLista);
         _lv.setAdapter(adapter);*/
     }
-}
+};

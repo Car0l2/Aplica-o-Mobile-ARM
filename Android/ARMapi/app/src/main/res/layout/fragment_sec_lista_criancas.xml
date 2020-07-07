@@ -6,104 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".ui.seclistacriancas.SecListaCriancasFragment">
 
-    <TextView
-        android:id="@+id/lbl_seclistcri"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="178dp"
-        android:text="@string/menu_listacriancas"
-        android:textColor="@color/azul_40"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/lbl_nomec2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/lbl_nome"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listcriadd" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/txt_nome4"
-        android:layout_width="201dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/txt_nome_exemplo"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.376"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_nomec2" />
+            <Button
+                android:id="@+id/listcriadd"
+                android:layout_width="115dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="256dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="40dp"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/azul_100"
+                android:text="Novo Registo"
+                android:textAllCaps="false"
+                android:textColor="@color/cardview_light_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_seclistcri" />
 
-    <TextView
-        android:id="@+id/txt_nome5"
-        android:layout_width="201dp"
-        android:layout_height="34dp"
-        android:text="@string/txt_nome_exemplo"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.376"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_nome4" />
+            <TextView
+                android:id="@+id/lbl_nomec2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="79dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="284dp"
+                android:text="@string/lbl_nome"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/listcriadd" />
 
-    <Button
-        android:id="@+id/dadoscri"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="82dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="32dp"
-        android:text="Visualizar"
-        android:textAllCaps="false"
-        android:textColor="@color/azul_100"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toEndOf="@+id/txt_nome4"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_nomec2" />
+            <TextView
+                android:id="@+id/lbl_seclistcri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="187dp"
+                android:text="@string/menu_listacriancas"
+                android:textColor="@color/azul_40"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button6"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="82dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:text="Visualizar"
-        android:textAllCaps="false"
-        android:textColor="@color/azul_100"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txt_nome5"
-        app:layout_constraintTop_toBottomOf="@+id/dadoscri" />
+            <ListView
+                android:id="@+id/listacri"
+                android:layout_width="292dp"
+                android:layout_height="544dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_nomec2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-    <Button
-        android:id="@+id/listcriadd"
-        android:layout_width="115dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:background="@android:drawable/editbox_background"
-        android:backgroundTint="@color/azul_100"
-        android:text="Novo Registo"
-        android:textAllCaps="false"
-        android:textColor="@color/cardview_light_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.969"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbl_seclistcri" />
 </androidx.constraintlayout.widget.ConstraintLayout>

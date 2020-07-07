@@ -29,7 +29,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_nome_f" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_nome_c" />
 
             <TextView
                 android:id="@+id/lbl_email"
@@ -44,7 +44,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_telemovel" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_alergias" />
 
             <EditText
                 android:id="@+id/txt_sala"
@@ -56,7 +56,7 @@
                 android:background="@android:drawable/editbox_background"
                 android:ems="10"
                 android:hint="ex. Amarela, Azul..."
-                android:inputType="date"
+                android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lbl_sala" />
@@ -74,7 +74,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_pass" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_doenca" />
 
             <TextView
                 android:id="@+id/lbl_sala"
@@ -88,11 +88,12 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_funcao" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_idade" />
 
             <EditText
-                android:id="@+id/txt_nome_f"
+                android:id="@+id/txt_nome_c"
                 android:layout_width="293dp"
                 android:layout_height="34dp"
                 android:layout_marginStart="58dp"
@@ -101,7 +102,7 @@
                 android:background="@android:drawable/editbox_background"
                 android:ems="10"
                 android:hint="Insira o nome da criança"
-                android:inputType="textPersonName"
+                android:inputType="text"
                 android:shadowColor="@color/azul_40"
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +110,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/lbl_nome_f" />
 
             <EditText
-                android:id="@+id/txt_email"
+                android:id="@+id/txt_restricao"
                 android:layout_width="293dp"
                 android:layout_height="34dp"
                 android:layout_marginStart="58dp"
@@ -118,13 +119,13 @@
                 android:background="@android:drawable/editbox_background"
                 android:ems="10"
                 android:hint='Insira as restrições ou "Nenhuma"'
-                android:inputType="textPersonName"
+                android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lbl_email" />
 
             <EditText
-                android:id="@+id/txt_pass"
+                android:id="@+id/txt_doenca"
                 android:layout_width="293dp"
                 android:layout_height="34dp"
                 android:layout_marginStart="58dp"
@@ -133,13 +134,13 @@
                 android:background="@android:drawable/editbox_background"
                 android:ems="10"
                 android:hint='Insira a doença ou "Nenhuma"'
-                android:inputType="textPersonName"
+                android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lbl_pass" />
 
             <EditText
-                android:id="@+id/txt_telemovel"
+                android:id="@+id/txt_alergias"
                 android:layout_width="298dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="58dp"
@@ -148,7 +149,7 @@
                 android:background="@android:drawable/editbox_background"
                 android:ems="10"
                 android:hint='Insira as alergias ou "Nenuma"'
-                android:inputType="textPersonName"
+                android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lbl_telemovel" />
@@ -166,7 +167,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_email" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_restricao" />
 
             <EditText
                 android:id="@+id/txt_contacto"
@@ -178,7 +179,7 @@
                 android:background="@android:drawable/editbox_background"
                 android:ems="10"
                 android:hint="Insira o contacto"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lbl_contacto" />
@@ -218,7 +219,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/txt_funcao"
+                android:id="@+id/txt_idade"
                 android:layout_width="293dp"
                 android:layout_height="34dp"
                 android:layout_marginStart="58dp"
@@ -227,7 +228,7 @@
                 android:background="@android:drawable/editbox_background"
                 android:ems="10"
                 android:hint="Insira a idade da criança"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lbl_funcao" />
